@@ -40,7 +40,7 @@ def emptyOrnot (position):
     return position
 
 turn = 1
-winner = 0
+
 for i in range(9) :
     position = input("Player " + str(turn) + ", your turn select the position : ")
     position = emptyOrnot(position)
@@ -54,38 +54,39 @@ for i in range(9) :
     if i>=4:
         if theBoard['7'] == theBoard['8'] == theBoard['9'] : 
             print("YOU WIN") 
-            winner+=1
+            
             break
         elif theBoard['4'] == theBoard['5'] == theBoard['6'] : 
             print(" YOU WIN") 
-            winner+=1
+            
             break
         elif theBoard['1'] == theBoard['2'] == theBoard['3'] : 
             print(" YOU WIN") 
-            winner+=1 
+            
             break
         elif theBoard['1'] == theBoard['4'] == theBoard['7'] : 
             print(" YOU WIN") 
-            winner+=1 
+            
             break
         elif theBoard['2'] == theBoard['5'] == theBoard['8'] : 
             print(" YOU WIN") 
-            winner+=1
+            
             break
         elif theBoard['3'] == theBoard['6'] == theBoard['9'] : 
             print(" YOU WIN")
-            winner+=1
+            
             break
         elif theBoard['7'] == theBoard['5'] == theBoard['3'] : 
             print(" YOU WIN") 
-            winner+=1
+            
             break
         elif theBoard['1'] == theBoard['5'] == theBoard['9'] : 
             print(" YOU WIN") 
-            winner+=1
+          
             break
-if winner == 0 :
-    print("IT'S A TIE ")
+        elif i == 8 :
+            print("IT'S A TIE ")
+
                       
  
 
