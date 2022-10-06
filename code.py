@@ -1,11 +1,14 @@
 print("***Tic-Tac-Toe Game welcome !!!***")
 print("Rules:")
 print("1:The game is played on a grid that's 3 squares by 3 squares.\n2:select the number of the case u want to play in\n3:The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner.\n4:When all 9 squares are full, the game is over.\n***let's begin***")
-
+f = open("texte.txt", "r")
+txt=f.read()
+c=0
 def inputControl (xoro) :
     while xoro  not in ("X", "O"):
         print(xoro)
-        xoro = input("Please, select only X or O : ")
+        #xoro = input("Please, select only X or O : ")
+        xoro=txt[c]
     return xoro
 
 player1 = input("Player 1 please select your symbol to play(X/O) : ")
@@ -34,16 +37,18 @@ def printBoard(board):
 
 printBoard(theBoard)
 
-def emptyOrnot (position):
+'''def emptyOrnot (position):
     while (theBoard[position] in ("X" , "0") ) :
         position =input("please select an empty position : ")
-    return position
+    return position'''
 
 turn = 1
 
 for i in range(9) :
-    position = input("Player " + str(turn) + ", your turn select the position : ")
-    position = emptyOrnot(position)
+    #position = input("Player " + str(turn) + ", your turn select the position : ")
+    #position = emptyOrnot(position)
+    position = txt[c+turn]
+    c+=1
     if turn == 1 :
         theBoard[position]=player1
         turn+=1
